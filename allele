@@ -1,0 +1,37 @@
+import decimal
+from decimal import Decimal
+
+AA = float(input("Enter AA: "))
+Aa = float(input("Enter Aa: "))
+aa = float(input("Enter aa: "))
+
+pop = AA + Aa + aa
+
+A = 2*AA+Aa
+a = 2*aa+Aa
+allele = (pop)*2
+
+print("The frequency of the dominant allele is " + str(A) + "/" + str(allele))
+print("The frequency of the recessive allele is " + str(a) + "/" + str(allele))
+
+p = Decimal(A)/Decimal(allele)
+q = Decimal(a)/Decimal(allele)
+
+p_squared = Decimal(p)**2
+q_squared = Decimal(q)**2
+
+
+
+print("p =  " + str(p) + ", p^2 = " + str(p_squared))
+print("q =  " + str(q) + ", q^2 = " + str(q_squared))
+
+OD = AA/pop
+OH = Aa/pop
+OR = aa/pop
+
+
+print("OD = " + str(OD) + ", OH = " + str(OH) + " OR = " + str(OR))
+
+print("p^2 + 2pq + q^2 = " + str(p_squared + 2*p*q + q_squared))
+
+print("OD + OH + OR = " + str(round((OD+OH+OR),15))) 
